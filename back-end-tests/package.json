@@ -1,0 +1,24 @@
+{
+  "name": "back-end-tests",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "cyo": "cypress open",
+    "cyr": "cypress run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/gdlzambiazzi/Raidiam.git"
+  },
+  "author": "gdlzambiazzi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gdlzambiazzi/Raidiam/issues"
+  },
+  "homepage": "https://github.com/gdlzambiazzi/Raidiam#readme",
+  "devDependencies": {
+    "cypress": "^13.5.1"
+  }
+}
