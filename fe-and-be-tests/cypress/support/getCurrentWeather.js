@@ -1,9 +1,9 @@
-const getCurrentWeather = (apiKey, lon, lat, units = '') => {
+const getCurrentWeather = (apiKey, lon, lat) => {
   const body = {};
 
   const options = {
     method: 'GET',
-    url: `/weather?lon=${lon}&lat=${lat}&appid=${apiKey}&units=${units}`,
+    url: `/weather?lon=${lon}&lat=${lat}&appid=${apiKey}`,
     body,
   }
   return options;
