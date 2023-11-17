@@ -1,15 +1,15 @@
 # Raidiam
 
-#**Task 1:**
+# **Task 1:**
 The Lemonade Store function is at the root of the project (lemonade-store.js).  
 To execute it, simply download the js file and run it with 'node lemonade-store.js'. I'll print the test outputs on the console.  
 Note: I've commented it in the code, but it's important to mention that the logic I chose to handle the bills and the changes is extremely brute-force. It is not an ideal solution for a real-world application. But it is working as expected with several different scenarios :D
 
-#**Task 2:**
+# **Task 2:**
 In progress  
 
-#**Task 3:**
-###**Important:** the original Open Weather API asked on the task is NOT free (https://openweathermap.org/api/one-call-3). It requires a subscription.  
+# **Task 3:**
+### **Important:** the original Open Weather API asked on the task is NOT free (https://openweathermap.org/api/one-call-3). It requires a subscription.  
 I'm using the current weather API available on https://openweathermap.org/current.  
   
 I chose to use Cypress and js to develop the API tests.  
