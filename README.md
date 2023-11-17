@@ -16,8 +16,9 @@ c) New article (/editor) and publishing an article must be working properly.
 2. Based on the 3 flows above, write how many test cases you consider important to ensure that these flows continue working. Feel free to write the test cases in the way that works best for you, using Gherkin, step-by-step, or any other format.  
   
 *Answer:*  
-
-(before each: logout!)
+  
+(before each: logout!)  
+  
 a) Feature: Conduit home page and article page  
 
 Scenario: Conduit home page  
@@ -39,10 +40,10 @@ Scenario Outline: Sign up flow
 Given I access conduit home page  
 And I click on Sign up link  
 And I'm redirected to the register page  
-And fill in the sign up form with `<username>`, '<email>' and "<password>"  
+And fill in the sign up form with `<username>`, `<email>` and `<password>`  
 When I click on the sign up button
 Then I'm redirected to the home page  
-And "<username>" is successfully logged in  
+And `<username>` is successfully logged in  
   
 Examples:  
 | username | email          | password  |  
@@ -52,10 +53,10 @@ Scenario Outline: Sign in flow
 Given I access conduit home page  
 And I click on Sign in link  
 And I'm redirected to the login page  
-And fill in the sign in credentials with "<email>" and "<password>"  
+And fill in the sign in credentials with `<email>` and `<password>`  
 When I click on sign in button  
 Then I'm redirected to the home page  
-And "<username>" is successfully logged in  
+And `<username>` is successfully logged in  
 
 Examples:  
 | username | email          | password  |  
@@ -64,13 +65,13 @@ Examples:
 c) New article and article publishing  
 
 Scenario outline:  
-Given I am logged in as "<email>", "<password>" (use API to login)  
+Given I am logged in as `<email>`, `<password>` (use API to login)  
 And I click on the New Article link  
 And I'm redirected to the article editor page  
-And I fill in the article "<title>", "<summary>", "<content>" and "<tags>"
+And I fill in the article `<title>`, `<summary>`, `<content>` and `<tags>`
 When I click on Public Article button
 Then my article should be published (status 200)
-And I should see my article on My Articles section (/@"<username>"/)
+And I should see my article on My Articles section (/@`<username>`/)
 
 Examples:  
 | username | email          | password  | title           | summary        | content                | tags      |  
