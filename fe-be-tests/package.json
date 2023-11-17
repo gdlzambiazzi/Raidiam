@@ -20,5 +20,8 @@
   "homepage": "https://github.com/gdlzambiazzi/Raidiam#readme",
   "devDependencies": {
     "cypress": "^13.5.1"
+  },
+  "dependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^19.1.1"
   }
 }
