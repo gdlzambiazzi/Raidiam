@@ -31,5 +31,5 @@ jobs:
         cache: 'npm'
         cache-dependency-path: fe-be-tests/
     - run: cd fe-be-tests
-    - run: npm ci
+    - run: npm install
     - run: npm run api_tests
