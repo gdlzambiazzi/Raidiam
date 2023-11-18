@@ -26,6 +26,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+        cache-dependency-path: fe-be-tests/
     - run: cd fe-be-tests
     - run: npm ci
     - run: npm run api_tests
