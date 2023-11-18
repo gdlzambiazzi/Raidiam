@@ -21,9 +21,12 @@ jobs:
     steps:
     - run: cd fe-be-tests/
     - uses: actions/checkout@v3
+      with:
+        working-directory: /fe-be-tests
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
+        working-directory: /fe-be-tests
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
         cache-dependency-path: fe-be-tests/
