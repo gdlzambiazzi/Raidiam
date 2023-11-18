@@ -21,22 +21,10 @@
   },
   "homepage": "https://github.com/gdlzambiazzi/Raidiam#readme",
   "devDependencies": {
-    "@badeball/cypress-cucumber-preprocessor": "^19.1.1",
     "@faker-js/faker": "^8.3.1",
     "cypress": "^13.5.1"
   },
   "dependencies": {
-    "@badeball/cypress-cucumber-preprocessor": "^19.1.1",
     "cypress-cucumber-preprocessor": "^4.3.1"
-  },
-  "cypress-cucumber-preprocessor": {
-    "nonGlobalStepDefinitions": false,
-    "stepDefinitions": "step_definitions",
-    "cucumberJson": {
-      "generate": true,
-      "outputFolder": "reports",
-      "filePrefix": "",
-      "fileSuffix": ""
-    }
   }
 }
