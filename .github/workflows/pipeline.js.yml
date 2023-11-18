@@ -1,6 +1,5 @@
 # This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
-
 name: Cypress-API-tests
 
 on:
@@ -20,16 +19,13 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
+    - run: cd fe-be-tests/
     - uses: actions/checkout@v3
-      with:
-        path: fe-be-tests/
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
-        path: fe-be-tests/
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
         cache-dependency-path: fe-be-tests/
-    - run: cd fe-be-tests
     - run: npm install
     - run: npm run api_tests
