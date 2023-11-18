@@ -19,7 +19,6 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-    - run: cd fe-be-tests/
     - uses: actions/checkout@v3
       with:
         working-directory: /fe-be-tests
