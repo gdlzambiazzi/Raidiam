@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "test",
-    "cyo": "cypress open",
+    "cyo": "cypress open --e2e --browser electron",
     "cyr": "cypress run"
   },
   "repository": {
@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/gdlzambiazzi/Raidiam#readme",
   "devDependencies": {
+    "@faker-js/faker": "^8.3.1",
     "cypress": "^13.5.1"
   },
   "dependencies": {

@@ -17,16 +17,15 @@ c) New article (/editor) and publishing an article must be working properly.
   
 *Answer:*  
   
-(before each: logout!)  
+a) Feature: Conduit home page  
   
-a) Feature: Conduit home page and article page  
-
 Scenario: Conduit home page  
 Given I access conduit home page  
 When all the articles are loaded  
 Then I can see a list of 10 articles  
 And each article displays an author, a title and a description
   
+Feature: Article page  
 Scenario: Article page  
 Given I access conduit home page  
 And all the articles are loaded  
@@ -34,7 +33,7 @@ When I click on the first article
 Then I am redirected to the article page  
 And the article contains an author, a title and a description  
   
-b) Feature: Sign up and sign in flow  
+b) Feature: Sign up flow  
 
 Scenario Outline: Sign up flow  
 Given I access conduit home page  
@@ -45,10 +44,11 @@ When I click on the sign up button
 Then I'm redirected to the home page  
 And `<username>` is successfully logged in  
   
-Examples:  
+Examples:  //in the actual test I'm using faker
 | username | email          | password  |  
 | user1    | user1@mail.com | password1 |  
 
+Feature: Sign in flow
 Scenario Outline: Sign in flow  
 Given I access conduit home page  
 And I click on Sign in link  
@@ -58,13 +58,13 @@ When I click on sign in button
 Then I'm redirected to the home page  
 And `<username>` is successfully logged in  
 
-Examples:  
+Examples:  //in the actual test I'm using faker
 | username | email          | password  |  
 | user1    | user1@mail.com | password1 |  
 
 c) New article and article publishing  
 
-Scenario outline:  
+Scenario outline:  //in the actual test I'm using faker
 Given I am logged in as `<email>`, `<password>` (use API to login)  
 And I click on the New Article link  
 And I'm redirected to the article editor page  
@@ -77,6 +77,18 @@ Examples:
 | username | email          | password  | title           | summary        | content                | tags      |  
 | user1    | user1@mail.com | password1 | My 1st article! | brief article  | bla bla bla bla bla... | laserTag1 |  
   
+3. Automate, using the framework or language you feel most comfortable with, the test
+case that you consider the most important from each critical flow
+
+*Answer:*  
+I wrote the test cases using BDD and a Cucumber library on Cypress.  
+The e2e tests are under /tests/integration/*.feature  
+The steps are described in /step_definitions  
+Each page tested is presented in /pages.
+I'm using the **Page Objects** pattern in the pages, listing all the page elements as objects.
+It facilitates reading the methods. It also provides better reusability and maintainability.
+
+
   
 # **Task 3:**
 ### **Important:** the original Open Weather API asked on the task is NOT free (https://openweathermap.org/api/one-call-3). It requires a subscription.  
