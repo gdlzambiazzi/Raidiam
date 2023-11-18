@@ -94,6 +94,19 @@ e2e tests (frontend): 'npm run e2e_tests'
 Or using Cypress interface: npm run cypress:open  
 
 **Note**: there's a bug on my local Cypress where it makes it impossible to run 2 specs together (e.g.: "article_basics.feature" and "new_article.feature" could be grouped into a single "article.feature"). What happens: the first .visit() works fine, but the second .visit() keeps loading forever. I've looked online for a solution and I've tried cleaning cache and session storage between tests - with no success. To workaround this issue, I had separated each feature into a unique .feature file. This way we're avoiding flaky tests.
+  
+    
+4. (optional) Bugs: I haven't identified any significant bugs on the application on the main flows I've tested and automated.  
+I'd need a little more time to investigate the rest of the application and report the issues found.  
+   
+    
+ 5. (optional) Pipeline and report  
+I've created a pipeline to run the tests - ***pipeline.js.yml***  
+It installs the dependencies and runs the API and e2e tests.  
+To see an example of a passing pipeline run: https://github.com/gdlzambiazzi/Raidiam/actions/runs/6915958262/job/18815487314  
+The test results are **reported** in the link above. It is possible to see the results under "Run npm run api_tests" and "Run npm run e2e_tests".  
+The next steps here would be to create test results artifacts (when having tests failing), download them and make them available as evidence / debugging.  
+
 
   
 # **Task 3:**
