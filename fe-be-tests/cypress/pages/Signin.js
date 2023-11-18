@@ -1,3 +1,5 @@
+import loginAPI from '../support/loginAPI';
+
 const elements = {
   divs: {
     authPage: '[class="auth-page"]'
@@ -13,11 +15,12 @@ const elements = {
     navBar: '[class="navbar navbar-light"]'
   },
   inputs: {
-    email: '[placeholder="Email"]',
+    email: '[placeholder="Email"]', //ideally, we should use a better selector here (in case the placeholder changes)
     password: '[placeholder="Password"]'
   }
 }
 
+const conduitURL = 'https://vue-vuex-realworld.netlify.app/#/';
 export default class Signin {
 
   static clickSigninLink() {
@@ -40,6 +43,17 @@ export default class Signin {
 
   static assertSignedIn(username) {
     cy.get(elements.anchors.navBar).contains(username)
+  }
+
+  static defaultUserSignin() {
+    cy.fixture('defaultUser.json').then(user => {
+      this.clickSigninLink()
+      this.assertSigninPage()
+      this.fillSigninForm(user.email, user.password)
+      this.clickSigninBtn()
+      // cy.visit(conduitURL)
+      this.assertSignedIn(user.username)
+    })
   }
 
 }

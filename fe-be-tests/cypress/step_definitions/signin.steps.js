@@ -11,7 +11,7 @@ const user = {
 };
 
 And('I have previously signed up', () => {
-  Signup.signupAPI(user.username, user.email, user.password);
+  Signup.signupViaAPI(user.username, user.email, user.password);
 })
 
 And('I click on Sign in link', () => {
@@ -36,4 +36,8 @@ Then('I\'m redirected to the home page', () => {
 
 And('my user is successfully signed in', () => {
   Signin.assertSignedIn(user.username);
+})
+
+Given('I sign in with default user', () => {
+  Signin.defaultUserSignin();
 })

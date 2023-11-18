@@ -1,12 +1,14 @@
 {
-  "name": "back-end-tests",
+  "name": "fe-be-tests",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "test",
-    "cyo": "cypress open --e2e --browser electron",
-    "cyr": "cypress run"
+    "cypress:open": "cypress open --e2e --browser electron",
+    "cypress:run": "cypress run",
+    "api_tests": "cypress run --spec \"cypress/tests/api_tests/*\"",
+    "e2e_tests": "cypress run --spec \"cypress/tests/integration/*\""
   },
   "repository": {
     "type": "git",

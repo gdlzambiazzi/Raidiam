@@ -69,7 +69,7 @@ Given I am logged in as `<email>`, `<password>` (use API to login)
 And I click on the New Article link  
 And I'm redirected to the article editor page  
 And I fill in the article `<title>`, `<summary>`, `<content>` and `<tags>`
-When I click on Public Article button
+When I click on Publish Article button
 Then my article should be published (status 200)
 And I should see my article on My Articles section (/@`<username>`/)
 
@@ -84,10 +84,16 @@ case that you consider the most important from each critical flow
 I wrote the test cases using BDD and a Cucumber library on Cypress.  
 The e2e tests are under /tests/integration/*.feature  
 The steps are described in /step_definitions  
-Each page tested is presented in /pages.
-I'm using the **Page Objects** pattern in the pages, listing all the page elements as objects.
-It facilitates reading the methods. It also provides better reusability and maintainability.
+Each page tested is presented in /pages.  
+I'm using the **Page Objects** pattern in the pages, listing all the page elements as objects.  
+It facilitates reading the methods. It also provides better reusability and maintainability.  
 
+***To run the tests (headless)***:  
+API tests (backend): 'npm run api_tests'  
+e2e tests (frontend): 'npm run e2e_tests'  
+Or using Cypress interface: npm run cypress:open  
+
+**Note**: there's a bug on my local Cypress where it makes it impossible to run 2 specs together (e.g.: "article_basics.feature" and "new_article.feature" could be grouped into a single "article.feature"). What happens: the first .visit() works fine, but the second .visit() keeps loading forever. I've looked online for a solution and I've tried cleaning cache and session storage between tests - with no success. To workaround this issue, I had separated each feature into a unique .feature file. This way we're having non-flaky tests.
 
   
 # **Task 3:**
@@ -99,7 +105,9 @@ I chose to use Cypress and js to develop the API tests.
 The API test file is under /fe-be-tests/cypress/tests/api_tests/openweather_api.cy.js  
   
 To run the API tests, you can clone the project locally. Make sure to have Cypress and the project dependencies installed (npm install cypress / npm install).  
-You can run the API tests headless (**npm run cyr**) - (see package.json to understand the scripts) or using the Cypress interface (**npm run cyo**)  
+***To run the tests***:  
+Headless: npm run api_tests - (see package.json to understand the scripts)  
+Using Cypress interface: npm run cypress:open  
   
 The baseURL is defined on cypress.config.js (https://api.openweathermap.org/data/2.5)  
 

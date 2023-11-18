@@ -1,3 +1,5 @@
+import signupAPI from '../support/signupAPI';
+
 const elements = {
   divs: {
     authPage: '[class="auth-page"]'
@@ -13,7 +15,7 @@ const elements = {
     navBar: '[class="navbar navbar-light"]'
   },
   inputs: {
-    username: '[placeholder="Username"]',
+    username: '[placeholder="Username"]', //ideally, we should use a better selector here (in case the placeholder changes)
     email: '[placeholder="Email"]',
     password: '[placeholder="Password"]'
   }
@@ -44,20 +46,11 @@ export default class Signup {
     cy.get(elements.anchors.navBar).contains(username)
   }
 
-  static signupAPI(username, email, password) {
-    cy.request({
-      method: 'POST',
-      url: 'https://api.realworld.io/api/users',
-      body: {
-        "user": {
-          "email": email,
-          "password": password,
-          "username": username
-        }
-      }
-    }).then(response => {
-      expect(response.status).to.eq(201)
-    })
+  static signupViaAPI(username, email, password) {
+    cy.request(signupAPI(username, email, password))
+      .then(response => {
+        expect(response.status).to.eq(201)
+      })
   }
 
 }
