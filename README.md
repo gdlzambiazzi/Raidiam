@@ -115,7 +115,7 @@ I'm using the current weather API available on https://openweathermap.org/curren
   
 I chose to use Cypress and js to develop the API tests.  
   
-The API test file is under /fe-be-tests/cypress/tests/api_tests/openweather_api.cy.js  
+The API test file is under /cypress/tests/api_tests/openweather_api.cy.js  
   
 To run the API tests, you can clone the project locally. Make sure to have Cypress and the project dependencies installed (npm install cypress / npm install).  
 ***To run the tests***:  
