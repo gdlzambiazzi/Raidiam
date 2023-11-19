@@ -101,7 +101,7 @@ I'd need a little more time to investigate the rest of the application and repor
    
     
  5. (optional) Pipeline and report  
-I've created a pipeline to run the tests - ***pipeline.js.yml***  
+I've created a pipeline to run the tests - ***pipeline.js.yml*** (Cypress-tests) 
 It installs the dependencies and runs the API and e2e tests.  
 To see an example of a passing pipeline run: https://github.com/gdlzambiazzi/Raidiam/actions/runs/6915958262/job/18815487314  
 The test results are **reported** in the link above. It is possible to see the results under "Run npm run api_tests" and "Run npm run e2e_tests".  
@@ -121,6 +121,7 @@ To run the API tests, you can clone the project locally. Make sure to have Cypre
 ***To run the tests***:  
 Headless: npm run api_tests - (see package.json to understand the scripts)  
 Using Cypress interface: npm run cypress:open  
+The tests are setup to be run on the pipeline too. (Cypress-tests)  
   
 The baseURL is defined on cypress.config.js (https://api.openweathermap.org/data/2.5)  
 
