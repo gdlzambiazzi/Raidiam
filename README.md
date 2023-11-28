@@ -130,6 +130,3 @@ I've used 3 different API endpoints on the tests:
 The fixture files used on the 'before' hook load test data and the API-key used on the endpoints.  
 2- /weather?q=${city},${countryCode} - this API uses a city name + country code to return weather information for that location. I haven't created test data for this case because I've only used it once.  
 3- /forecast - this API uses coordinates and a timestamp count to return an aggregated list of weather information for that location.  
-  
-  
-TODO: once I'm done with Task 2, I'll create a pipeline and run the API tests there together with the e2e tests.
